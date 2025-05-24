@@ -27,8 +27,10 @@ Thứ giúp cho Skinsight khác biệt so với những sản phẩm cùng chứ
 -  Hệ thống được tích hợp với camera của người dùng, giúp việc chụp ảnh trở nên nhanh chóng
 -  Tính năng chọn trong kho ảnh nếu không thể truy cập camera
 -  Hỗ trợ tạo ra 1 log chi tiết về tình trạng làn da
+-  Hỗ trợ tiếng Việt cho toàn bộ người dùng
+-  Hệ thống cơ sở dữ liệu bảo mật
 
-Để có thể chạy ứng dụng, bạn chỉ cần nhập dòng lệnh này trong Docker:
+Để có thể chạy ứng dụng, người dùng chỉ cần nhập dòng lệnh này trong Docker:
 
 ```bash
 docker compose up -d
@@ -36,7 +38,12 @@ docker compose up -d
 
 Nếu port của bạn là 5000, thì bạn có thể truy cập ứng dụng qua <http://localhost:5000>
 
-## Planning and Designing
+## Designing
+
+Sau đây là một số thiết kế biểu đồ để hỗ trợ nắm bắt rõ hơn về ứng dụng, bao gồm:
+
+- **Sequence Diagram** để khai quát toàn bộ quá trình khởi động ứng dụng cho đến hết ca làm việc, cho cả người dùng lẫn quản trị viên:
+
 <!-- Screenshots -->
 <p align="center">
   <img src="svg/sequence_user.svg" style="margin:10px;">
@@ -47,11 +54,14 @@ Nếu port của bạn là 5000, thì bạn có thể truy cập ứng dụng qu
   <img src="svg/sequence_admin.svg" width="50%" style="margin:10px;">
 </p>
 
+- **Class Diagram** để khai quát hệ thống các lớp, hàm được sử dụng, các attribute và method của mỗi lớp:
+
 <!-- Screenshots -->
 <p align="center">
   <img src="svg/class_diagram.svg" width="50%" style="margin:10px;">
 </p>
 
+- **ERD Diagram** để khái quát mối quan hệ giữa các Table trong Database
 <!-- Screenshots -->
 <p align="center">
   <img src="svg/erd_diagram.svg" width="60%" style="margin:10px;">
